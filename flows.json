@@ -1,0 +1,435 @@
+[
+    {
+        "id": "da5b935a7cde9fb4",
+        "type": "tab",
+        "label": "Codesys(OPC UA).project1.project",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "14dbce655f3d846d",
+        "type": "OpcUa-Item",
+        "z": "da5b935a7cde9fb4",
+        "item": "ns=4;s=|appo|CODESYS Control Win V3 x64.Application.Programs",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "",
+        "x": 460,
+        "y": 220,
+        "wires": [
+            [
+                "4bf921981f45de1d"
+            ]
+        ]
+    },
+    {
+        "id": "4bf921981f45de1d",
+        "type": "OpcUa-Client",
+        "z": "da5b935a7cde9fb4",
+        "endpoint": "1d2a889ece472321",
+        "action": "subscribe",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "applicationName": "",
+        "applicationUri": "",
+        "x": 680,
+        "y": 220,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "eb52de434988824d",
+        "type": "ui-text",
+        "z": "da5b935a7cde9fb4",
+        "group": "e513e63c2ed6f470",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Message",
+        "label": "message",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 500,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0bff36ed12d7604c",
+        "type": "ui-button",
+        "z": "da5b935a7cde9fb4",
+        "group": "e513e63c2ed6f470",
+        "name": "Action",
+        "label": "Click Me",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "Welcome to Dashboard 2.0!",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "eb52de434988824d"
+            ]
+        ]
+    },
+    {
+        "id": "f35a04b941b5a941",
+        "type": "ui-slider",
+        "z": "da5b935a7cde9fb4",
+        "group": "860dd64059531ecc",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 270,
+        "y": 520,
+        "wires": [
+            [
+                "57e7434b55cddc43",
+                "c53882cb3871cf1b"
+            ]
+        ]
+    },
+    {
+        "id": "57e7434b55cddc43",
+        "type": "ui-gauge",
+        "z": "da5b935a7cde9fb4",
+        "name": "",
+        "group": "860dd64059531ecc",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 410,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c53882cb3871cf1b",
+        "type": "ui-chart",
+        "z": "da5b935a7cde9fb4",
+        "group": "860dd64059531ecc",
+        "name": "",
+        "label": "chart",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 410,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d2a889ece472321",
+        "type": "OpcUa-Endpoint",
+        "name": "opc.tcp://ZartPC:4840",
+        "endpoint": "opc.tcp://ZartPC:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "e513e63c2ed6f470",
+        "type": "ui-group",
+        "name": "My Controls",
+        "page": "02963805da682e49",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "860dd64059531ecc",
+        "type": "ui-group",
+        "name": "Group Name",
+        "page": "c0798817c7c493be",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "02963805da682e49",
+        "type": "ui-page",
+        "name": "Dashboard",
+        "ui": "142e6e01fcf6cb5b",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "cbd8d6ef57f7c659",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "c0798817c7c493be",
+        "type": "ui-page",
+        "name": "Monitoring Dashboard",
+        "ui": "142e6e01fcf6cb5b",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "cbd8d6ef57f7c659",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "142e6e01fcf6cb5b",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "cbd8d6ef57f7c659",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "21dce6757596bf21",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-opcua": "0.2.351",
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
